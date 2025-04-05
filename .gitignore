@@ -1,2 +1,35 @@
+# Build artifacts
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Temporary files
+*.log
+*.vspscc
+*.vssscc
+*.tmp
+*.tmp_proj
+*.log
+*.tlog
+*.ide
+*.cache
+*.pdb
+
+# Visual Studio specific files
 .vs/
+.vscode/
+
+# NuGet packages
 packages/
+
+# Publish output
+publish/
+
+# Other
+Thumbs.db
+*.DS_Store

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Student Report";
+}
+
+<h2>Student Report</h2>
+<form method="post" action="/Report/Generate">
+    <div class="form-group mb-2">
+        <label for="SelectedCourseID">Select Course:</label>
+        <select id="SelectedCourseID" name="SelectedCourseID" class="form-control">
+            <option value="">Select a course</option> <!-- Default option -->
+            @foreach (var course in ViewBag.Courses)
+            {
+                <option value="@course.Value">@course.Text</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" name="action" value="preview" class="btn btn-primary">
+        Print Preview
+    </button>
+
+    <button type="submit" name="action" value="export" class="btn btn-secondary">
+        Export to PDF
+    </button>
+</form>

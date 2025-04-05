@@ -18,3 +18,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*Overide*/
+.navbar-text {
+    display: flex;
+    align-items: center;
+}
+
+.text-danger ul {
+    list-style-type: none;
+    padding-left: 0;
+}

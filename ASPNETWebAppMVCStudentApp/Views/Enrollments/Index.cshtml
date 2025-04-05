@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ASPNETWebAppMVCStudentApp.Enrollment>
+
+@{
+    ViewBag.Title = "Enrollments";
+}
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h2>Enrollments</h2>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Grade)</th>
+                        <th>@Html.DisplayNameFor(model => model.Cours.Title)</th>
+                        <th>@Html.DisplayNameFor(model => model.Student.FullName)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Grade)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Cours.Title)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Student.FullName)</td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentID }, new { @class = "btn btn-warning btn-sm" })
+                                @Html.ActionLink("Details", "Details", new { id = item.EnrollmentID }, new { @class = "btn btn-dark btn-sm" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentID }, new { @class = "btn btn-danger btn-sm" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-end">
+                @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary mt-3" })
+            </div>
+        </div>
+    </div>
+</div>
